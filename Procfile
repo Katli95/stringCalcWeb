@@ -1,1 +1,1 @@
-web: build/install/calcApi/bin/calcApi
+web: gradle build/install/calcApi/bin/calcApi
