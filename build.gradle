@@ -21,5 +21,8 @@ task copyToLib(type: Copy) {
 }
 
 task stage{
-    dependsOn installDist
+    dependsOn= ['build', 'clean', 'installDist']
 }
+
+build.mustRunAfter clean
+installDist.mustRunAfter build
