@@ -15,3 +15,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
+task copyToLib(type: Copy) {
+    into "$buildDir/lib"
+    from(configurations.compile)
+}
+
+task stage{
+    dependsOn installDist
+}
