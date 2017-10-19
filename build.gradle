@@ -15,14 +15,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-task copyToLib(type: Copy) {
-    into "$buildDir/lib"
-    from(configurations.compile)
-}
-
 task stage{
-    dependsOn= ['build', 'clean', 'installDist']
+    dependsOn installDist
 }
-
-build.mustRunAfter clean
-installDist.mustRunAfter build
